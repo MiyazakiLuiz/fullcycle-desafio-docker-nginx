@@ -51,4 +51,6 @@ function deleteDB() {
 
 app.listen(port, () => {
   console.log('Rodando na porta ' + port)
+  const query = "create table if not exists people(id int not null auto_increment, name varchar(255) not null, primary key(id));"
+  connection.query(query)
 })
